@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ProductoRepository extends JpaRepository<Producto, Long> {
-    // --- ¡AÑADIR ESTO! ---
+
     /**
      * Llama al procedimiento almacenado "actualizar_stock" de PostgreSQL.
      * Usamos @Modifying porque es una operación de escritura (UPDATE).
