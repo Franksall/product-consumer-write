@@ -1,0 +1,15 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: product-consumer-write
+
+  profiles:
+    active: dev
+
+  config:
+    import: "configserver:http://ms-config-server:8888"
+
+  kafka:
+    bootstrap-servers: kafka-broker:9092

@@ -1,0 +1,33 @@
+package com.example.ms_productos.model;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import java.time.LocalDateTime;
+
+
+
+
+@Data //  Anotación  Lombok
+@NoArgsConstructor //  Lombok
+@AllArgsConstructor //  Lombok
+@Entity
+@Table(name = "productos") //   R2DBC (reemplaza a @Entity)
+public class Producto {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String nombre;
+    private String descripcion;
+    private Double precio;
+    private Integer stock;
+    private Boolean activo;
+    private LocalDateTime fechaCreacion;
+}
